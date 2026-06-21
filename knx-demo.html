@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KNX Smart Home Demo | Smart Volt Automation</title>
+    <meta
+      name="description"
+      content="Interactive KNX smart home demo with floor plan, devices, rooms and bilingual Arabic English explanations."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="knx-demo.css" />
+  </head>
+  <body class="knx-page">
+    <header class="demo-header">
+      <a class="brand" href="index.html#top" aria-label="Smart Volt Automation home">
+        <span class="brand-mark smartvolt-logo" aria-hidden="true"></span>
+        <span>
+          <strong>Smart Volt Automation</strong>
+          <small data-i18n="brandSmall">Engineering Automation</small>
+        </span>
+      </a>
+      <nav class="demo-nav">
+        <a href="index.html#projects" data-i18n="backProjects">Projects</a>
+        <a href="index.html#contact" data-i18n="contact">Contact</a>
+      </nav>
+      <div class="language-switcher" aria-label="Language selector">
+        <button class="is-active" type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="ar">AR</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="demo-hero">
+        <div class="demo-hero-copy">
+          <p class="eyebrow" data-i18n="eyebrow">Interactive KNX floor plan</p>
+          <h1 data-i18n="title">KNX Smart Home Demo</h1>
+          <p data-i18n="lead">
+            Explore how KNX touch screens, keypads, sensors, DALI lighting, curtains, AC and smart panels connect inside a modern villa.
+          </p>
+        </div>
+        <div class="demo-hero-panel">
+          <img src="assets/smart-home-devices.png" alt="Smart home automation devices" />
+          <span data-i18n="panelLabel">Live concept map</span>
+          <strong>KNX + DALI + Smart Panel</strong>
+        </div>
+      </section>
+
+      <section class="floor-demo" aria-label="KNX smart home floor plan">
+        <div class="floor-shell">
+          <figure class="section-photo floor-photo">
+            <img src="assets/smart-home-devices.png" alt="KNX smart home devices and electrical automation" />
+          </figure>
+          <div class="floor-plan" data-floor-plan>
+            <div class="room living" data-i18n="living">Living Room</div>
+            <div class="room bedroom" data-i18n="bedroom">Bedroom</div>
+            <div class="room kitchen" data-i18n="kitchen">Kitchen</div>
+            <div class="room bathroom" data-i18n="bathroom">Bathroom</div>
+            <div class="room outdoor" data-i18n="outdoor">Outdoor Area</div>
+
+            <div class="plan-detail window window-living" aria-hidden="true"></div>
+            <div class="plan-detail window window-bedroom" aria-hidden="true"></div>
+            <div class="plan-detail window window-kitchen" aria-hidden="true"></div>
+            <div class="plan-detail window window-bath" aria-hidden="true"></div>
+            <div class="plan-detail door door-entry" aria-hidden="true"></div>
+            <div class="plan-detail door door-bedroom" aria-hidden="true"></div>
+            <div class="plan-detail door door-bath" aria-hidden="true"></div>
+            <div class="plan-detail furniture sofa" aria-hidden="true"></div>
+            <div class="plan-detail furniture table" aria-hidden="true"></div>
+            <div class="plan-detail furniture bed" aria-hidden="true"></div>
+            <div class="plan-detail furniture kitchen-counter" aria-hidden="true"></div>
+            <div class="plan-detail movement path-entry" aria-hidden="true"></div>
+            <div class="plan-detail movement path-living" aria-hidden="true"></div>
+            <div class="plan-detail movement path-bedroom" aria-hidden="true"></div>
+
+            <div class="bus-line bus-main-vertical" aria-hidden="true"></div>
+            <div class="bus-line bus-main-horizontal" aria-hidden="true"></div>
+            <div class="bus-line bus-left-top" aria-hidden="true"></div>
+            <div class="bus-line bus-left-bottom" aria-hidden="true"></div>
+            <div class="bus-line bus-right-top" aria-hidden="true"></div>
+            <div class="bus-line bus-right-bottom" aria-hidden="true"></div>
+            <div class="bus-line bus-outdoor" aria-hidden="true"></div>
+            <div class="bus-line bus-kitchen" aria-hidden="true"></div>
+            <div class="bus-dot bus-dot-main" aria-hidden="true"></div>
+            <div class="bus-dot bus-dot-left" aria-hidden="true"></div>
+            <div class="bus-dot bus-dot-right" aria-hidden="true"></div>
+
+            <div class="knx-wire wire-touch-panel" aria-hidden="true"></div>
+            <div class="knx-wire wire-panel-lighting" aria-hidden="true"></div>
+            <div class="knx-wire wire-panel-dali" aria-hidden="true"></div>
+            <div class="knx-wire wire-panel-outdoor" aria-hidden="true"></div>
+            <div class="knx-wire wire-panel-keypad" aria-hidden="true"></div>
+            <div class="knx-wire wire-panel-ac" aria-hidden="true"></div>
+            <div class="knx-wire wire-panel-motion" aria-hidden="true"></div>
+            <div class="knx-wire wire-panel-curtain" aria-hidden="true"></div>
+
+            <button class="light-point onoff lp-living" type="button" data-device="lighting" aria-label="Linked Living Room Lighting">
+              <span></span>
+            </button>
+            <button class="light-point onoff lp-kitchen" type="button" data-device="lighting" aria-label="Linked Kitchen Lighting">
+              <span></span>
+            </button>
+            <button class="light-point onoff lp-bedroom" type="button" data-device="lighting" aria-label="Linked Bedroom Lighting">
+              <span></span>
+            </button>
+            <button class="light-point dali-glow lp-dali-living" type="button" data-device="dali" aria-label="DALI Living Room Lighting">
+              <span></span>
+            </button>
+            <button class="light-point dali-glow lp-dali-dining" type="button" data-device="dali" aria-label="DALI Dining Lighting">
+              <span></span>
+            </button>
+            <button class="light-point dali-glow lp-outdoor" type="button" data-device="dali" aria-label="DALI Outdoor Lighting">
+              <span></span>
+            </button>
+            <button class="light-point onoff lp-entry" type="button" data-device="lighting" aria-label="Entrance Lighting">
+              <span></span>
+            </button>
+            <button class="light-point onoff lp-bath" type="button" data-device="lighting" aria-label="Bathroom Lighting">
+              <span></span>
+            </button>
+            <button class="light-point onoff lp-hall" type="button" data-device="lighting" aria-label="Hall Lighting">
+              <span></span>
+            </button>
+            <button class="linear-point dali-glow linear-living" type="button" data-device="dali" aria-label="Living Room Linear DALI Lighting">
+              <span></span>
+            </button>
+            <button class="linear-point dali-glow linear-kitchen" type="button" data-device="dali" aria-label="Kitchen Linear Lighting">
+              <span></span>
+            </button>
+            <button class="linear-point onoff linear-bedroom" type="button" data-device="lighting" aria-label="Bedroom Linear Lighting">
+              <span></span>
+            </button>
+
+            <button class="device touch" type="button" data-device="touch" aria-label="KNX Touch Screen">
+              <span>Screen</span>
+            </button>
+            <button class="device keypad" type="button" data-device="keypad" aria-label="KNX Keypad">
+              <span>Keypad</span>
+            </button>
+            <button class="device keypad keypad-bedroom" type="button" data-device="keypad" aria-label="Bedroom KNX Keypad">
+              <span>Bed Key</span>
+            </button>
+            <button class="device keypad keypad-entry" type="button" data-device="keypad" aria-label="Entrance KNX Keypad">
+              <span>Entry Key</span>
+            </button>
+            <button class="device touch touch-kitchen" type="button" data-device="touch" aria-label="Kitchen KNX Touch Screen">
+              <span>Panel</span>
+            </button>
+            <button class="device lighting" type="button" data-device="lighting" aria-label="Lighting">
+              <span>Light</span>
+            </button>
+            <button class="device curtain" type="button" data-device="curtain" aria-label="Curtain Control">
+              <span>Curtain</span>
+            </button>
+            <button class="device ac" type="button" data-device="ac" aria-label="AC Control">
+              <span>Cooling</span>
+            </button>
+            <button class="device motion" type="button" data-device="motion" aria-label="Motion Sensor">
+              <span>Sensor</span>
+            </button>
+            <button class="device dali" type="button" data-device="dali" aria-label="DALI Lighting">
+              <span>DALI</span>
+            </button>
+            <button class="device smart-panel" type="button" data-device="smartPanel" aria-label="Smart Electrical Panel">
+              <strong>SP</strong>
+              <small>Actuators</small>
+              <small>Relays</small>
+              <small>Dimmer</small>
+            </button>
+          </div>
+        </div>
+
+        <aside class="device-panel" data-device-panel>
+          <p class="eyebrow" data-i18n="selectedSystem">Selected system</p>
+          <h2 data-device-en>KNX Touch Screen</h2>
+          <h3 data-device-ar>شاشة KNX</h3>
+          <p data-device-description>
+            Central wall interface for lighting, curtains, AC scenes and room control.
+          </p>
+          <div class="example-box">
+            <span data-i18n="projectExample">Project example</span>
+            <strong data-device-example>Living room master screen for scenes, climate and curtains.</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="room-showcases" aria-label="Room and kitchen smart automation examples">
+        <article class="showcase-card room-suite">
+          <figure class="showcase-photo">
+            <img src="assets/smart-home-devices.png" alt="Room smart automation devices for lighting cooling cinema and curtains" />
+          </figure>
+          <div class="showcase-copy">
+            <p class="eyebrow" data-i18n="roomDemoEyebrow">Single room control</p>
+            <h2 data-i18n="roomDemoTitle">Cooling, lighting, cinema and curtains in one room</h2>
+            <p data-i18n="roomDemoLead">
+              A complete room scenario can connect AC, dimmable lighting, cinema mode and curtain control from a keypad, touch screen, phone or automation logic.
+            </p>
+          </div>
+          <div class="room-mini-plan" aria-hidden="true">
+            <div class="mini-window"></div>
+            <div class="mini-curtain"></div>
+            <div class="mini-screen">Cinema</div>
+            <div class="mini-sofa"></div>
+            <div class="mini-ac">AC</div>
+            <div class="mini-keypad">KNX</div>
+            <div class="mini-phone">App</div>
+            <span class="mini-light light-a"></span>
+            <span class="mini-light light-b"></span>
+            <span class="mini-light light-c"></span>
+            <span class="mini-bus bus-a"></span>
+            <span class="mini-bus bus-b"></span>
+            <span class="mini-bus bus-c"></span>
+          </div>
+          <div class="showcase-points">
+            <div>
+              <strong data-i18n="roomFeature1Title">Cinema scene</strong>
+              <p data-i18n="roomFeature1Text">Lights dim, curtains close and AC moves to comfort mode with one command.</p>
+            </div>
+            <div>
+              <strong data-i18n="roomFeature2Title">Remote control</strong>
+              <p data-i18n="roomFeature2Text">The owner can prepare the room from the mobile before arriving home.</p>
+            </div>
+            <div>
+              <strong data-i18n="roomFeature3Title">Automation logic</strong>
+              <p data-i18n="roomFeature3Text">Schedules and sensors reduce cooling and lighting when the room is empty.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="showcase-card kitchen-suite">
+          <figure class="showcase-photo">
+            <img src="assets/smart-home-devices.png" alt="Kitchen smart safety gas sensor and shutoff valve automation" />
+          </figure>
+          <div class="showcase-copy">
+            <p class="eyebrow" data-i18n="kitchenDemoEyebrow">Kitchen safety</p>
+            <h2 data-i18n="kitchenDemoTitle">Gas sensor, gas line and automatic shut-off valve</h2>
+            <p data-i18n="kitchenDemoLead">
+              The kitchen can include a gas detector connected to a shut-off valve, kitchen lighting and mobile notification logic even when the owner is outside the house.
+            </p>
+          </div>
+          <div class="kitchen-mini-plan" aria-hidden="true">
+            <div class="mini-counter">Cooktop</div>
+            <div class="gas-line"></div>
+            <div class="gas-sensor">Gas Sensor</div>
+            <div class="gas-valve">Valve</div>
+            <div class="extractor">Hood</div>
+            <div class="alert-phone">Alert</div>
+            <span class="safe-light safe-a"></span>
+            <span class="safe-light safe-b"></span>
+            <span class="safe-bus safe-bus-a"></span>
+            <span class="safe-bus safe-bus-b"></span>
+            <span class="safe-bus safe-bus-c"></span>
+          </div>
+          <div class="showcase-points">
+            <div>
+              <strong data-i18n="kitchenFeature1Title">Gas protection</strong>
+              <p data-i18n="kitchenFeature1Text">When gas is detected, the system can close the valve and run a safety scene.</p>
+            </div>
+            <div>
+              <strong data-i18n="kitchenFeature2Title">Mobile notification</strong>
+              <p data-i18n="kitchenFeature2Text">A notification can reach the owner immediately, even outside the home.</p>
+            </div>
+            <div>
+              <strong data-i18n="kitchenFeature3Title">Clear response</strong>
+              <p data-i18n="kitchenFeature3Text">Lighting, extractor readiness and alarm logic help protect the house before the issue grows.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="device-photo-section">
+        <div class="device-photo-heading">
+          <p class="eyebrow" data-i18n="devicePhotosEyebrow">Smart devices gallery</p>
+          <h2 data-i18n="devicePhotosTitle">Realistic visual references for each smart home device</h2>
+          <p data-i18n="devicePhotosLead">
+            These device visuals explain the main components used in a smart home project and can be replaced later with original product photos.
+          </p>
+        </div>
+        <div class="device-photo-grid">
+          <article data-gallery-device="touch" tabindex="0" role="button">
+            <img src="assets/smart-home-devices.png" alt="KNX touch screen visual" />
+            <strong data-i18n="photoTouch">KNX Touch Screen</strong>
+          </article>
+          <article data-gallery-device="keypad" tabindex="0" role="button">
+            <img src="assets/smart-home-devices.png" alt="KNX keypad visual" />
+            <strong data-i18n="photoKeypad">KNX Keypad</strong>
+          </article>
+          <article data-gallery-device="lighting" tabindex="0" role="button">
+            <img src="assets/smart-home-devices.png" alt="Smart lighting visual" />
+            <strong data-i18n="photoLighting">Smart Lighting</strong>
+          </article>
+          <article data-gallery-device="curtain" tabindex="0" role="button">
+            <img src="assets/smart-home-devices.png" alt="Curtain control visual" />
+            <strong data-i18n="photoCurtain">Curtain Control</strong>
+          </article>
+          <article data-gallery-device="ac" tabindex="0" role="button">
+            <img src="assets/smart-home-devices.png" alt="AC thermostat visual" />
+            <strong data-i18n="photoAc">AC Control</strong>
+          </article>
+          <article data-gallery-device="motion" tabindex="0" role="button">
+            <img src="assets/smart-home-devices.png" alt="Motion sensor visual" />
+            <strong data-i18n="photoMotion">Motion Sensor</strong>
+          </article>
+          <article data-gallery-device="dali" tabindex="0" role="button">
+            <img src="assets/smart-home-devices.png" alt="DALI lighting module visual" />
+            <strong data-i18n="photoDali">DALI Lighting</strong>
+          </article>
+          <article data-gallery-device="smartPanel" tabindex="0" role="button">
+            <img src="assets/smart-home-devices.png" alt="Smart electrical panel visual" />
+            <strong data-i18n="photoPanel">Smart Electrical Panel</strong>
+          </article>
+          <article data-gallery-device="gas" tabindex="0" role="button">
+            <img src="assets/smart-home-devices.png" alt="Gas sensor visual" />
+            <strong data-i18n="photoGas">Gas Sensor</strong>
+          </article>
+          <article data-gallery-device="valve" tabindex="0" role="button">
+            <img src="assets/smart-home-devices.png" alt="Gas shutoff valve visual" />
+            <strong data-i18n="photoValve">Gas Shut-off Valve</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="how-knx">
+        <div>
+          <p class="eyebrow" data-i18n="howEyebrow">System logic</p>
+          <h2 data-i18n="howTitle">How KNX Smart Home Works</h2>
+        </div>
+        <div class="how-grid">
+          <article>
+            <span>01</span>
+            <p data-i18n="how1">All smart devices communicate through the KNX Bus Cable.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <p data-i18n="how2">Control is handled from touch screens, keypads and sensors.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <p data-i18n="how3">Lighting, curtains, AC, DALI, scenes and smart panels can work together.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <p data-i18n="how4">The system fits villas, apartments, hotels and smart buildings.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="garden-scenarios">
+        <div class="scenario-heading">
+          <p class="eyebrow" data-i18n="gardenEyebrow">Outdoor smart living</p>
+          <h2 data-i18n="gardenTitle">Garden and scenario automation</h2>
+          <p data-i18n="gardenLead">
+            The garden can become part of the same KNX logic, including lighting, irrigation readiness, motion response and evening scenes.
+          </p>
+        </div>
+        <div class="scenario-grid">
+          <article>
+            <span>01</span>
+            <h3 data-i18n="scenario1Title">Evening garden scene</h3>
+            <p data-i18n="scenario1Text">Path lights, facade lights and sitting-area lights turn on together from the screen or keypad.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3 data-i18n="scenario2Title">Welcome home</h3>
+            <p data-i18n="scenario2Text">Outdoor lighting, entrance lighting, AC comfort mode and selected curtains react as one scene.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3 data-i18n="scenario3Title">Energy saving</h3>
+            <p data-i18n="scenario3Text">Sensors and schedules reduce unnecessary lighting and cooling while keeping important areas ready.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3 data-i18n="scenario4Title">Maximum smart home value</h3>
+            <p data-i18n="scenario4Text">The best result is not many devices, but one coordinated system that is easy to operate, maintain and expand.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="facade-automation">
+        <div class="facade-copy">
+          <figure class="section-photo facade-photo">
+            <img src="assets/smart-home-devices.png" alt="Smart facade automation and mobile control devices" />
+          </figure>
+          <p class="eyebrow" data-i18n="facadeEyebrow">Smart facade</p>
+          <h2 data-i18n="facadeTitle">House facade, weather logic and mobile control</h2>
+          <p data-i18n="facadeLead">
+            The same KNX system can connect facade lighting, sun sensing, weather protection and mobile commands so the home reacts automatically or from the owner phone.
+          </p>
+        </div>
+        <div class="facade-scene" aria-label="Smart home facade automation">
+          <div class="solar-array" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="facade-house">
+            <div class="roof"></div>
+            <div class="home-body">
+              <span class="window lit"></span>
+              <span class="window"></span>
+              <span class="door"></span>
+              <span class="facade-light left"></span>
+              <span class="facade-light right"></span>
+            </div>
+          </div>
+          <div class="garden-zone" aria-hidden="true">
+            <span class="tree"></span>
+            <span class="tree small"></span>
+            <span class="path-light one"></span>
+            <span class="path-light two"></span>
+            <span class="path-light three"></span>
+          </div>
+          <div class="facade-node sun" data-i18n="sunSensor">Sun Sensor</div>
+          <div class="facade-node weather" data-i18n="weatherSensor">Weather Sensor</div>
+          <div class="facade-node mobile" data-i18n="mobileControl">Mobile Control</div>
+          <div class="facade-node solar" data-i18n="solarPanels">Solar Panels</div>
+          <div class="facade-node garden" data-i18n="gardenLighting">Garden Lighting</div>
+          <div class="facade-line line-sun" aria-hidden="true"></div>
+          <div class="facade-line line-weather" aria-hidden="true"></div>
+          <div class="facade-line line-mobile" aria-hidden="true"></div>
+          <div class="facade-line line-solar" aria-hidden="true"></div>
+          <div class="facade-line line-garden" aria-hidden="true"></div>
+        </div>
+        <div class="facade-benefits">
+          <article>
+            <strong data-i18n="facade1Title">Automatic protection</strong>
+            <p data-i18n="facade1Text">Weather and sun data can trigger shutters, garden lighting or safe scenes without manual action.</p>
+          </article>
+          <article>
+            <strong data-i18n="facade2Title">Mobile override</strong>
+            <p data-i18n="facade2Text">The owner can run scenes, lights and facade functions from the phone when needed.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="demo-cta">
+        <h2 data-i18n="ctaTitle">Ready to design your smart home?</h2>
+        <a class="btn primary" href="https://wa.me/9647702744755" data-i18n="cta">Request Smart Home Design</a>
+      </section>
+    </main>
+
+    <div class="gallery-modal" data-gallery-modal aria-hidden="true">
+      <div class="gallery-backdrop" data-gallery-close></div>
+      <section class="gallery-dialog" role="dialog" aria-modal="true" aria-labelledby="galleryTitle">
+        <button class="gallery-close" type="button" data-gallery-close aria-label="Close">×</button>
+        <figure>
+          <img data-gallery-image src="assets/smart-home-devices.png" alt="Smart home device detail" />
+        </figure>
+        <div class="gallery-detail">
+          <p class="eyebrow" data-gallery-type>Smart home device</p>
+          <h2 id="galleryTitle" data-gallery-title>KNX Touch Screen</h2>
+          <p data-gallery-description>
+            Main wall interface for smart home control.
+          </p>
+          <div class="gallery-use">
+            <span data-i18n="galleryUseLabel">Typical use</span>
+            <strong data-gallery-use>Controls lighting, curtains, AC and scenes from one place.</strong>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="knx-demo.js"></script>
+  </body>
+</html>
