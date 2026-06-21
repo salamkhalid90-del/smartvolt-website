@@ -280,7 +280,8 @@ const devices = {
 
 const galleryDevices = {
   touch: {
-    crop: "12% 44%",
+    image: "assets/knx-touch-screen.jpg",
+    crop: "center",
     type: { en: "Control interface", ar: "واجهة تحكم" },
     title: { en: "KNX Touch Screen", ar: "شاشة KNX" },
     desc: {
@@ -293,7 +294,8 @@ const galleryDevices = {
     }
   },
   keypad: {
-    crop: "24% 48%",
+    image: "assets/knx-keypad.jpg",
+    crop: "center",
     type: { en: "Wall control", ar: "تحكم جداري" },
     title: { en: "KNX Keypad", ar: "كيباد KNX" },
     desc: {
@@ -306,7 +308,8 @@ const galleryDevices = {
     }
   },
   lighting: {
-    crop: "38% 38%",
+    image: "assets/smart-lighting.jpg",
+    crop: "center",
     type: { en: "Lighting load", ar: "حمل إنارة" },
     title: { en: "Smart Lighting", ar: "إنارة ذكية" },
     desc: {
@@ -319,7 +322,8 @@ const galleryDevices = {
     }
   },
   curtain: {
-    crop: "82% 44%",
+    image: "assets/curtain-control.webp",
+    crop: "center",
     type: { en: "Motorized shading", ar: "ستائر كهربائية" },
     title: { en: "Curtain Control", ar: "تحكم الستائر" },
     desc: {
@@ -332,7 +336,8 @@ const galleryDevices = {
     }
   },
   ac: {
-    crop: "58% 44%",
+    image: "assets/ac-control.webp",
+    crop: "center",
     type: { en: "Climate control", ar: "تحكم مناخي" },
     title: { en: "AC Control", ar: "تحكم التكييف" },
     desc: {
@@ -345,7 +350,8 @@ const galleryDevices = {
     }
   },
   motion: {
-    crop: "45% 60%",
+    image: "assets/motion-sensor.png",
+    crop: "center",
     type: { en: "Presence sensing", ar: "استشعار تواجد" },
     title: { en: "Motion Sensor", ar: "حساس حركة" },
     desc: {
@@ -358,7 +364,8 @@ const galleryDevices = {
     }
   },
   dali: {
-    crop: "34% 72%",
+    image: "assets/dali-lighting.webp",
+    crop: "center",
     type: { en: "Professional dimming", ar: "تعتيم احترافي" },
     title: { en: "DALI Lighting", ar: "إنارة DALI" },
     desc: {
@@ -371,7 +378,8 @@ const galleryDevices = {
     }
   },
   smartPanel: {
-    crop: "70% 68%",
+    image: "assets/smart-electrical-panel.jpg",
+    crop: "center",
     type: { en: "Central smart panel", ar: "بورد سمارت مركزي" },
     title: { en: "Smart Electrical Panel", ar: "بورد كهربائي ذكي" },
     desc: {
@@ -384,7 +392,8 @@ const galleryDevices = {
     }
   },
   gas: {
-    crop: "43% 78%",
+    image: "assets/gas-sensor.jpg",
+    crop: "center",
     type: { en: "Safety sensor", ar: "حساس أمان" },
     title: { en: "Gas Sensor", ar: "حساس غاز" },
     desc: {
@@ -397,7 +406,8 @@ const galleryDevices = {
     }
   },
   valve: {
-    crop: "55% 78%",
+    image: "assets/gas-shutoff-valve.webp",
+    crop: "center",
     type: { en: "Gas safety actuator", ar: "مشغل أمان الغاز" },
     title: { en: "Gas Shut-off Valve", ar: "صمام غلق الغاز" },
     desc: {
@@ -448,6 +458,12 @@ function updateDevice(key) {
   deviceButtons.forEach((button) => {
     button.classList.toggle("is-active", button.dataset.device === key);
   });
+
+  const panel = document.querySelector("[data-device-panel]");
+  panel?.classList.remove("is-updating");
+  requestAnimationFrame(() => {
+    panel?.classList.add("is-updating");
+  });
 }
 
 function updateGallery(key) {
@@ -459,6 +475,7 @@ function updateGallery(key) {
   galleryType.textContent = item.type[currentLang];
   galleryDescription.textContent = item.desc[currentLang];
   galleryUse.textContent = item.use[currentLang];
+  galleryImage.src = item.image;
   galleryImage.style.objectPosition = item.crop;
   galleryImage.alt = item.title[currentLang];
 }
