@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" role="img" aria-labelledby="title desc">
+  <title id="title">SV Automation logo</title>
+  <desc id="desc">Professional Smart Volt Automation logo with SV monogram and automation text.</desc>
+  <defs>
+    <linearGradient id="markGradient" x1="120" y1="80" x2="820" y2="620" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#07172f"/>
+      <stop offset="0.48" stop-color="#103466"/>
+      <stop offset="1" stop-color="#15518f"/>
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="260" y1="170" x2="690" y2="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff4c5f"/>
+      <stop offset="1" stop-color="#d7263d"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="26" flood-color="#07172f" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#softShadow)">
+    <path
+      d="M480 54 796 198v258c0 56-31 107-81 132L480 706 245 588c-50-25-81-76-81-132V198L480 54Z"
+      fill="url(#markGradient)"
+    />
+    <path
+      d="M480 92 754 217v229c0 40-23 77-59 95L480 649 265 541c-36-18-59-55-59-95V217L480 92Z"
+      fill="none"
+      stroke="#ffffff"
+      stroke-opacity="0.16"
+      stroke-width="10"
+    />
+  </g>
+
+  <path
+    d="M229 213h78c36 0 66 10 90 30l-37 52c-16-13-34-20-55-20h-73c-17 0-31 13-31 30 0 18 14 30 31 30h82c67 0 116 45 116 109 0 68-51 111-121 111H188v-63h121c33 0 55-19 55-47 0-27-22-45-55-45h-77c-56 0-98-39-98-92 0-55 41-95 95-95Z"
+    fill="#ffffff"
+  />
+  <path
+    d="M439 213h78l86 221 88-221h77L635 555h-65L439 213Z"
+    fill="#ffffff"
+  />
+
+  <path
+    d="M361 547h236"
+    fill="none"
+    stroke="url(#accentGradient)"
+    stroke-width="18"
+    stroke-linecap="round"
+  />
+  <path
+    d="M622 515h70c18 0 32-14 32-32v-51"
+    fill="none"
+    stroke="url(#accentGradient)"
+    stroke-width="12"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <circle cx="724" cy="417" r="18" fill="#07172f" stroke="#d7263d" stroke-width="10"/>
+  <circle cx="319" cy="547" r="16" fill="#d7263d"/>
+  <circle cx="640" cy="547" r="16" fill="#d7263d"/>
+
+  <text
+    x="480"
+    y="626"
+    text-anchor="middle"
+    font-family="Inter, Montserrat, Arial, sans-serif"
+    font-size="58"
+    font-weight="800"
+    letter-spacing="10"
+    fill="#ffffff"
+  >automation</text>
+</svg>
