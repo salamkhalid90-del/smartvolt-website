@@ -910,6 +910,16 @@ html[dir="rtl"] .service-list article::after {
 .logo-fanvil img {
   object-fit: contain;
 }
+
+.logo-ruijie {
+  padding: 8px;
+  background: #ffffff;
+}
+
+.logo-ruijie img {
+  object-fit: contain;
+}
+
 .logo-hikvision {
   padding: 8px;
   background: #ffffff;
