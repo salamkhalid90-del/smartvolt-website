@@ -889,7 +889,14 @@ html[dir="rtl"] .service-list article::after {
 .logo-siemens { background: linear-gradient(135deg, #00a0a8, #00646b); }
 .logo-legrand { background: linear-gradient(135deg, #ef7d00, #c6202e); }
 .logo-hager { background: linear-gradient(135deg, #004b93, #45a3dc); }
-.logo-hikvision { background: linear-gradient(135deg, #d71920, #333333); }
+.logo-hikvision {
+  padding: 8px;
+  background: #ffffff;
+}
+
+.logo-hikvision img {
+  object-fit: contain;
+}
 .logo-dahua { background: linear-gradient(135deg, #1f5faa, #0b2d5c); }
 
 .partners-track strong {
