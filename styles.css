@@ -894,7 +894,14 @@ html[dir="rtl"] .service-list article::after {
 .logo-siemens img {
   object-fit: contain;
 }
-.logo-legrand { background: linear-gradient(135deg, #ef7d00, #c6202e); }
+.logo-legrand {
+  padding: 8px;
+  background: #ffffff;
+}
+
+.logo-legrand img {
+  object-fit: contain;
+}
 .logo-hager { background: linear-gradient(135deg, #004b93, #45a3dc); }
 .logo-hikvision {
   padding: 8px;
