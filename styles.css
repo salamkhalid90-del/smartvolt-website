@@ -869,15 +869,23 @@ html[dir="rtl"] .service-list article::after {
   flex: 0 0 58px;
   place-items: center;
   border-radius: var(--radius);
+  overflow: hidden;
   color: var(--white);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0;
 }
 
+.partner-logo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
 .logo-knx { background: linear-gradient(135deg, #009fe3, #005a9c); }
 .logo-schneider { background: linear-gradient(135deg, #3dcd58, #10843a); }
-.logo-abb { background: linear-gradient(135deg, #e30613, #8f1018); }
+.logo-abb { background: #111827; }
 .logo-siemens { background: linear-gradient(135deg, #00a0a8, #00646b); }
 .logo-legrand { background: linear-gradient(135deg, #ef7d00, #c6202e); }
 .logo-hager { background: linear-gradient(135deg, #004b93, #45a3dc); }
