@@ -762,7 +762,6 @@ html[dir="rtl"] .service-list article::after {
 }
 
 .service-list h3,
-.product-grid h3,
 .panel-list h3,
 .trust-grid h3 {
   margin: 0;
@@ -770,25 +769,10 @@ html[dir="rtl"] .service-list article::after {
 }
 
 .service-list p,
-.product-grid p,
 .panel-list p,
 .trust-grid p {
   margin: 8px 0 0;
   overflow-wrap: break-word;
-}
-
-.products-section {
-  background: linear-gradient(135deg, var(--blue-950) 0%, var(--blue-900) 46%, var(--blue-700) 100%);
-  color: var(--white);
-}
-
-.products-section h2,
-.products-section .product-grid h3 {
-  color: var(--white);
-}
-
-.products-section p {
-  color: rgba(255, 255, 255, 0.7);
 }
 
 .partners-section {
@@ -914,34 +898,6 @@ html[dir="rtl"] .service-list article::after {
   to {
     transform: translateX(calc(-50% - 7px));
   }
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  margin-top: 42px;
-}
-
-.product-grid article {
-  min-height: 270px;
-  padding: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.055);
-}
-
-.icon-box {
-  display: grid;
-  width: 54px;
-  height: 54px;
-  place-items: center;
-  margin-bottom: 52px;
-  border-radius: var(--radius);
-  background: var(--orange);
-  color: var(--white);
-  font-size: 0.75rem;
-  font-weight: 800;
 }
 
 .panel-layout {
@@ -1521,7 +1477,6 @@ html[dir="rtl"] .trust-grid article::after {
     border-bottom: none;
   }
 
-  .product-grid,
   .consultation-steps {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1579,7 +1534,6 @@ html[dir="rtl"] .trust-grid article::after {
   .metrics,
   .project-grid,
   .service-list,
-  .product-grid,
   .consultation-steps,
   .quote-form,
   .trust-grid,
