@@ -902,7 +902,14 @@ html[dir="rtl"] .service-list article::after {
 .logo-legrand img {
   object-fit: contain;
 }
-.logo-hager { background: linear-gradient(135deg, #004b93, #45a3dc); }
+.logo-fanvil {
+  padding: 8px;
+  background: #ffffff;
+}
+
+.logo-fanvil img {
+  object-fit: contain;
+}
 .logo-hikvision {
   padding: 8px;
   background: #ffffff;
