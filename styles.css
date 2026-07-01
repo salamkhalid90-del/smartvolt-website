@@ -902,6 +902,16 @@ html[dir="rtl"] .service-list article::after {
 .logo-legrand img {
   object-fit: contain;
 }
+
+.logo-hager {
+  padding: 8px;
+  background: #ffffff;
+}
+
+.logo-hager img {
+  object-fit: contain;
+}
+
 .logo-fanvil {
   padding: 8px;
   background: #ffffff;
