@@ -886,7 +886,14 @@ html[dir="rtl"] .service-list article::after {
 .logo-knx { background: linear-gradient(135deg, #009fe3, #005a9c); }
 .logo-schneider { background: linear-gradient(135deg, #3dcd58, #10843a); }
 .logo-abb { background: #111827; }
-.logo-siemens { background: linear-gradient(135deg, #00a0a8, #00646b); }
+.logo-siemens {
+  padding: 8px;
+  background: #ffffff;
+}
+
+.logo-siemens img {
+  object-fit: contain;
+}
 .logo-legrand { background: linear-gradient(135deg, #ef7d00, #c6202e); }
 .logo-hager { background: linear-gradient(135deg, #004b93, #45a3dc); }
 .logo-hikvision {
