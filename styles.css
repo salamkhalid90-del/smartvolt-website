@@ -884,7 +884,14 @@ html[dir="rtl"] .service-list article::after {
 }
 
 .logo-knx { background: linear-gradient(135deg, #009fe3, #005a9c); }
-.logo-schneider { background: linear-gradient(135deg, #3dcd58, #10843a); }
+.logo-schneider {
+  padding: 8px;
+  background: #ffffff;
+}
+
+.logo-schneider img {
+  object-fit: contain;
+}
 .logo-abb { background: #111827; }
 .logo-siemens {
   padding: 8px;
