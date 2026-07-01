@@ -904,7 +904,14 @@ html[dir="rtl"] .service-list article::after {
 .logo-hikvision img {
   object-fit: contain;
 }
-.logo-dahua { background: linear-gradient(135deg, #1f5faa, #0b2d5c); }
+.logo-dahua {
+  padding: 8px;
+  background: #ffffff;
+}
+
+.logo-dahua img {
+  object-fit: contain;
+}
 
 .partners-track strong {
   color: var(--blue-950);
