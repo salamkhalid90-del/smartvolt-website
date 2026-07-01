@@ -883,7 +883,14 @@ html[dir="rtl"] .service-list article::after {
   object-fit: cover;
 }
 
-.logo-knx { background: linear-gradient(135deg, #009fe3, #005a9c); }
+.logo-knx {
+  padding: 8px;
+  background: #ffffff;
+}
+
+.logo-knx img {
+  object-fit: contain;
+}
 .logo-schneider {
   padding: 8px;
   background: #ffffff;
