@@ -76,11 +76,19 @@ textarea {
   backdrop-filter: blur(16px);
 }
 
+.brand-stack {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  min-width: 270px;
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  min-width: 250px;
+  min-width: 0;
 }
 
 .brand-mark {
@@ -156,6 +164,71 @@ textarea {
   font-size: 0.72rem;
   font-weight: 600;
   opacity: 0.72;
+}
+
+.brand-demo-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-left: 66px;
+  padding: 7px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: currentColor;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 14px 28px rgba(7, 23, 47, 0.14);
+  backdrop-filter: blur(12px);
+  transition: transform 170ms ease, background 170ms ease, border-color 170ms ease, color 170ms ease;
+}
+
+.brand-demo-link::before {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+  content: "";
+  box-shadow: 0 0 0 5px rgba(215, 38, 61, 0.18);
+}
+
+.brand-demo-link:hover,
+.brand-demo-link:focus {
+  transform: translateY(-1px);
+  border-color: rgba(215, 38, 61, 0.36);
+  background: rgba(215, 38, 61, 0.92);
+  color: var(--white);
+}
+
+.site-header.is-scrolled .brand-demo-link,
+.site-header.nav-open .brand-demo-link {
+  border-color: rgba(21, 81, 143, 0.16);
+  background: rgba(234, 241, 251, 0.92);
+  color: var(--blue-950);
+  box-shadow: 0 10px 24px rgba(7, 23, 47, 0.08);
+}
+
+.site-header.is-scrolled .brand-demo-link:hover,
+.site-header.is-scrolled .brand-demo-link:focus,
+.site-header.nav-open .brand-demo-link:hover,
+.site-header.nav-open .brand-demo-link:focus {
+  border-color: rgba(215, 38, 61, 0.36);
+  background: var(--orange);
+  color: var(--white);
+}
+
+html[dir="rtl"] .brand-stack {
+  align-items: flex-end;
+}
+
+html[dir="rtl"] .brand-demo-link {
+  margin-right: 66px;
+  margin-left: 0;
 }
 
 .nav-links {
@@ -1467,6 +1540,11 @@ html[dir="rtl"] .trust-grid article::after {
 @media (max-width: 1120px) {
   .site-header {
     grid-template-columns: auto auto;
+    gap: 16px;
+  }
+
+  .brand-stack {
+    min-width: min(58vw, 300px);
   }
 
   .nav-toggle {
@@ -1577,12 +1655,36 @@ html[dir="rtl"] .trust-grid article::after {
     padding: 14px 16px;
   }
 
-  .brand {
+  .brand-stack {
     min-width: 0;
+    max-width: calc(100vw - 128px);
   }
 
   .brand small {
     display: none;
+  }
+
+  .brand-logo-image {
+    width: 46px;
+    height: 46px;
+  }
+
+  .brand strong {
+    font-size: 0.88rem;
+  }
+
+  .brand-demo-link {
+    max-width: 100%;
+    margin-left: 58px;
+    padding: 6px 9px;
+    overflow: hidden;
+    font-size: 0.66rem;
+    text-overflow: ellipsis;
+  }
+
+  html[dir="rtl"] .brand-demo-link {
+    margin-right: 58px;
+    margin-left: 0;
   }
 
   .hero {
