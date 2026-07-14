@@ -648,11 +648,25 @@ html[dir="rtl"] .metrics div:not(:last-child)::after {
   background: #f8fafc;
 }
 
+.projects-heading {
+  display: block;
+  max-width: 1120px;
+}
+
+.projects-heading h2 {
+  max-width: 940px;
+}
+
+.projects-heading p:not(.eyebrow) {
+  max-width: 760px;
+  margin: 18px 0 0;
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
-  margin-top: 46px;
+  margin-top: 28px;
 }
 
 .project-card {
