@@ -456,8 +456,69 @@ function updateHeader() {
   header.classList.toggle("is-scrolled", window.scrollY > 24);
 }
 
+function animateMetricNumber(element) {
+  const target = Number(element.dataset.countTo);
+  if (!Number.isFinite(target)) return;
+
+  const suffix = element.dataset.countSuffix || "";
+  const pad = Number(element.dataset.countPad || 0);
+  const duration = 1400;
+  const startValue = 1;
+  const format = (value) => `${String(value).padStart(pad, "0")}${suffix}`;
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || target <= startValue) {
+    element.textContent = format(target);
+    return;
+  }
+
+  const startTime = performance.now();
+  const easeOutCubic = (value) => 1 - Math.pow(1 - value, 3);
+
+  function tick(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const current = Math.round(startValue + (target - startValue) * easeOutCubic(progress));
+    element.textContent = format(current);
+
+    if (progress < 1) {
+      requestAnimationFrame(tick);
+    }
+  }
+
+  element.textContent = format(startValue);
+  requestAnimationFrame(tick);
+}
+
+function setupMetricCounters() {
+  const counters = document.querySelectorAll("[data-count-to]");
+  if (!counters.length) return;
+
+  const runCounters = () => {
+    counters.forEach((counter) => {
+      if (counter.dataset.countAnimated === "true") return;
+      counter.dataset.countAnimated = "true";
+      animateMetricNumber(counter);
+    });
+  };
+
+  if (!("IntersectionObserver" in window)) {
+    runCounters();
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    if (entries.some((entry) => entry.isIntersecting)) {
+      runCounters();
+      observer.disconnect();
+    }
+  }, { threshold: 0.35 });
+
+  const metrics = document.querySelector(".metrics");
+  observer.observe(metrics || counters[0]);
+}
+
 window.addEventListener("scroll", updateHeader, { passive: true });
 updateHeader();
+setupMetricCounters();
 
 navToggle.addEventListener("click", () => {
   const isOpen = header.classList.toggle("nav-open");
