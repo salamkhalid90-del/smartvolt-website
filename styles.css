@@ -533,8 +533,16 @@ html[dir="rtl"] .hero-trust div:last-child {
   display: grid;
   max-width: none;
   grid-template-columns: minmax(280px, 640px) minmax(240px, 480px);
-  gap: clamp(28px, 8vw, 110px);
+  gap: clamp(18px, 4vw, 48px);
   align-items: end;
+}
+
+.section-heading p:not(.eyebrow),
+.split-content > p:not(.eyebrow),
+.consultation-copy > p:not(.eyebrow),
+.quote-intro > p:not(.eyebrow),
+.trust-copy > p:not(.eyebrow) {
+  margin: 18px 0 0;
 }
 
 .section h2 {
@@ -768,7 +776,7 @@ html[dir="rtl"] .metrics div:not(:last-child)::after {
   position: relative;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 34px;
+  margin-top: 26px;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -868,7 +876,7 @@ html[dir="rtl"] .service-list article::after {
 
 .partners-showcase {
   --partner-duration: 32s;
-  margin-top: 42px;
+  margin-top: 28px;
 }
 
 .partners-marquee {
@@ -1068,7 +1076,7 @@ html[dir="rtl"] .service-list article::after {
   display: grid;
   grid-template-columns: minmax(320px, 1.1fr) minmax(320px, 0.9fr);
   gap: 22px;
-  margin-top: 42px;
+  margin-top: 28px;
 }
 
 .panel-image {
@@ -1202,7 +1210,7 @@ html[dir="rtl"] .panel-list article:hover h3 {
 .consultation-section {
   display: grid;
   grid-template-columns: minmax(320px, 0.9fr) minmax(320px, 1.1fr);
-  gap: clamp(28px, 7vw, 94px);
+  gap: clamp(24px, 5vw, 58px);
   align-items: center;
   background: linear-gradient(90deg, var(--blue-950), var(--blue-800), var(--blue-700));
   color: var(--white);
@@ -1259,7 +1267,7 @@ html[dir="rtl"] .panel-list article:hover h3 {
 .quotation-section {
   display: grid;
   grid-template-columns: minmax(300px, 0.75fr) minmax(320px, 1fr);
-  gap: clamp(30px, 7vw, 88px);
+  gap: clamp(24px, 5vw, 58px);
   align-items: start;
   background: var(--page);
 }
@@ -1341,7 +1349,7 @@ html[dir="rtl"] .quote-form input[type="tel"] {
 .trust-section {
   display: grid;
   grid-template-columns: minmax(300px, 0.75fr) minmax(320px, 1fr);
-  gap: clamp(32px, 8vw, 96px);
+  gap: clamp(24px, 5vw, 60px);
   align-items: center;
 }
 
