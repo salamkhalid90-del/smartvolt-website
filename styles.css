@@ -577,16 +577,69 @@ html[dir="rtl"] .hero-trust div:last-child {
   overflow: hidden;
   border: 1px solid rgba(16, 52, 102, 0.14);
   border-radius: var(--radius);
-  background: var(--blue-950);
+  background:
+    linear-gradient(135deg, rgba(7, 23, 47, 0.96), rgba(16, 52, 102, 0.92));
   box-shadow: 0 20px 48px rgba(7, 23, 47, 0.14);
 }
 
-.intro-collage img {
+.intro-remote-grid {
+  display: grid;
+  grid-template-columns: 0.86fr 1.14fr;
+  gap: 10px;
+  padding: 10px;
+}
+
+.intro-remote-grid img {
   display: block;
   width: 100%;
-  height: clamp(300px, 34vw, 480px);
+  height: clamp(280px, 29vw, 430px);
+  border-radius: 6px;
   object-fit: cover;
   object-position: center;
+  filter: saturate(0.94) contrast(1.04);
+}
+
+.intro-remote-grid img:first-child {
+  object-position: 50% 62%;
+}
+
+.intro-collage figcaption {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  padding: 20px 22px 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--white);
+}
+
+.intro-collage figcaption::before {
+  position: absolute;
+  top: -2px;
+  left: 22px;
+  width: 94px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--orange), rgba(255, 255, 255, 0.72));
+  content: "";
+}
+
+html[dir="rtl"] .intro-collage figcaption::before {
+  right: 22px;
+  left: auto;
+}
+
+.intro-collage strong {
+  color: var(--white);
+  font-size: clamp(1.25rem, 2.1vw, 1.72rem);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.intro-collage span {
+  max-width: 560px;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.92rem;
+  line-height: 1.55;
 }
 
 .metrics {
@@ -1755,6 +1808,15 @@ html[dir="rtl"] .trust-grid article::after {
 
   .service-media-duo img {
     min-height: 320px;
+  }
+
+  .intro-remote-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-remote-grid img {
+    height: auto;
+    min-height: 260px;
   }
 
   .metrics div {
