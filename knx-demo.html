@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="theme-color" content="#102A43" />
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/smartvolt-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KNX Smart Home Demo | Smart Volt Automation</title>
     <meta
@@ -19,14 +21,12 @@
   </head>
   <body class="knx-page">
     <header class="demo-header">
-      <a class="brand" href="index.html#top" aria-label="Smart Volt Automation home">
-        <img class="brand-logo-image" src="assets/sv-automation-logo.svg" alt="SV Automation logo" />
-        <span>
-          <strong>Smart Volt Automation</strong>
-          <small data-i18n="brandSmall">Engineering Automation</small>
-        </span>
-      </a>
-      <strong class="demo-header-title">KNX Smart Home Demo</strong>
+      <div class="brand-stack">
+        <a class="brand" href="index.html#top" aria-label="SmartVolt Engineering Solutions">
+          <img class="brand-logo-image" src="assets/smartvolt-engineering-solutions.png" alt="SmartVolt Engineering Solutions" width="2172" height="724" />
+        </a>
+        <a class="brand-demo-link" href="#floor-demo">KNX Smart Home Demo</a>
+      </div>
       <nav class="demo-nav">
         <a href="index.html#projects" data-i18n="backProjects">Projects</a>
         <a href="index.html#contact" data-i18n="contact">Contact</a>
@@ -53,7 +53,7 @@
         </div>
       </section>
 
-      <section class="floor-demo" aria-label="KNX smart home floor plan">
+      <section class="floor-demo" id="floor-demo" aria-label="KNX smart home floor plan">
         <div class="floor-shell">
           <figure class="section-photo floor-photo">
             <img src="assets/smart-home-devices.png" alt="KNX smart home devices and electrical automation" />
